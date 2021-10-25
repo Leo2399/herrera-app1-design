@@ -1,0 +1,29 @@
+@startuml
+class Application {
+    +start () throws exception : void
+    +main () : void
+}
+
+class ToDoListsController {
+
+    @FXML
+    -TableColumn columnTitle
+    -TableColumn columnDueDate
+    -TableColumn columnDescription
+    -Button addButton
+    -Button deleteButton
+    -Button saveButton
+    -TextField titleTextField
+    -TextField descriptionTextField
+    -TextField dueDateTextField
+    -TextField deleteTextField
+
+    deleteTask (ActionEvent event) : void
+    addTask (ActionEvent event) : void
+    saveTask (ActionEvent event) : void
+
+    +initialize () : void
+}
+
+javafx.application.Application<|--Application
+@enduml
