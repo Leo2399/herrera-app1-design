@@ -40,21 +40,31 @@ public class ToDoListsController {
 
     @FXML
     void addTask(ActionEvent event) {
+        // This method should add the task into the list
+        // add the title of the task into the title column
+        // add the due date of the task into the due date column
+        // add the description into the description column
+        // after the task has been added the text field should refresh and be blank to enter new information
 
     }
 
     @FXML
     void deleteTask(ActionEvent event) {
-
+        // This method should delete a task from the list
+        // get the task you want to delete
+        // have that task deleted
+        // after a task has been deleted, refresh the text field to be blank
     }
 
     @FXML
     void saveToFile(ActionEvent event) {
-
+        // This method should be able to save the list into a file
+        // write the data from the task list into a new file of a new name given by the user
     }
 
     public void initialize(){
-
+        // not exactly sure what I need to do in this method in this method
+        // will eventually figure it out
     }
 
 }
