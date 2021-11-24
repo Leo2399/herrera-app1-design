@@ -7,23 +7,54 @@ class Application {
 class ToDoListsController {
 
     @FXML
-    -TableColumn columnTitle
-    -TableColumn columnDueDate
-    -TableColumn columnDescription
+    -TableColumn <Items, String> columnDueDate
+    -TableColumn <Items, String> columnDescription
+    -TableColumn <Items, String> columnStatus
+    -TableView <Items> taskTableView
+    -ListView <String> toToListView
+    -Button addListButton
+    -Button deleteListButton
     -Button addButton
     -Button deleteButton
     -Button saveButton
-    -TextField titleTextField
+    -Button loadButton
+    -TextField listTitleTextField
     -TextField descriptionTextField
     -TextField dueDateTextField
-    -TextField deleteTextField
+    -ComboBox <String> filterListBox
+    -ComboBox <String> statusBox
 
+    addList (ActionEvent event): void
+    deleteList (ActionEvent event): void
     deleteTask (ActionEvent event) : void
     addTask (ActionEvent event) : void
-    saveTask (ActionEvent event) : void
+    saveToFile (ActionEvent event) : void
+    loadList (ActionEvent event) : void
+    filterList (ActionEvent event) : void
 
     +initialize () : void
 }
 
+class Items {
+    -SimpleStringProperty dueDate
+    -SimpleStringProperty description
+    -SimpleStringProperty status
+
+    +Items(String dueDate, String description, String status)
+
+    +getDueDate (): String
+    +getDescription ():String
+    +getStatus ():String
+
+    +setDueDate (String dueDate):void
+    +setDescription (String description): void
+    +setStatus (String status): void
+
+    +dueDateProperty (): SimpleStringProperty
+    +descriptionProperty (): SimpleStringProperty
+    +statusProperty (): SimpleStringProperty
+}
+
+ToDoListsController <-- Items
 javafx.application.Application<|--Application
 @enduml

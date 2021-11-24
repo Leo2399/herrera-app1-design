@@ -2,29 +2,34 @@ package baseline;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 
+import java.awt.*;
+
 public class ToDoListsController {
-
-    @FXML
-    private TableColumn<?, ?> columnDescription;
-
-    @FXML
-    private TableColumn<?, ?> columnDueDate;
-
-    @FXML
-    private TableColumn<?, ?> columnTitle;
 
     @FXML
     private Button addButton;
 
     @FXML
+    private Button addListButton;
+
+    @FXML
+    private TableColumn<Items, String> columnDescription;
+
+    @FXML
+    private TableColumn<Items, String> columnDueDate;
+
+    @FXML
+    private TableColumn<Items, String> columnStatus;
+
+    @FXML
     private Button deleteButton;
 
     @FXML
-    private TextField deleteTextField;
+    private Button deleteListButton;
 
     @FXML
     private TextField descriptionTextField;
@@ -33,39 +38,80 @@ public class ToDoListsController {
     private TextField dueDateTextField;
 
     @FXML
+    private Button loadButton;
+
+    @FXML
     private Button saveButton;
 
     @FXML
-    private TextField titleTextField;
+    private TableView<Items> taskTableView;
+
+    @FXML
+    private TextField listTitleTextField;
+
+    @FXML
+    private ListView<String> toDoListView;
+
+    @FXML
+    private ComboBox<String> filterListBox;
+
+    @FXML
+    private ComboBox<String> statusBox;
+
+    @FXML
+    void addList(ActionEvent event) {
+        // When the add list button is clicked add new to-do list entered
+        // Make sure the title is at least 3 character long
+        // Add new list to the list view
+    }
 
     @FXML
     void addTask(ActionEvent event) {
-        // This method should add the task into the list
-        // add the title of the task into the title column
-        // add the due date of the task into the due date column
-        // add the description into the description column
-        // after the task has been added the text field should refresh and be blank to enter new information
+        // Add new item to selected to-do list
+        // TextFields should not be empty
+        // Makes sure the due date is in YYYY-MM-DD
+        // Get completion status from combo box
+        // Add to the tableview for the selected list
+    }
 
+    @FXML
+    void deleteList(ActionEvent event) {
+        // Get highlighted list and remove it
     }
 
     @FXML
     void deleteTask(ActionEvent event) {
-        // This method should delete a task from the list
-        // get the task you want to delete
-        // have that task deleted
-        // after a task has been deleted, refresh the text field to be blank
+        // Get highlighted item in a selected to-do list and remove it
+    }
+
+    @FXML
+    void loadList(ActionEvent event) {
+        // Get an already existing list and load into a current to-do list
+        // Make sure the file is not empty
+        // Make sure that it replaces everything in the current list
     }
 
     @FXML
     void saveToFile(ActionEvent event) {
-        // This method should be able to save the list into a file
-        // write the data from the task list into a new file of a new name given by the user
+        // Write a new text file to store the data of a single to-do list
+        // Set the file location, and name
     }
 
+    @FXML
+    void filterList(ActionEvent event) {
+        // Filter current to-do list using the combo box
+        // View either All, Complete, or Incomplete
+    }
+
+    @FXML
     public void initialize(){
-        // not exactly sure what I need to do in this method in this method
-        // will eventually figure it out
+        // List view should be able to open up table views with different data
+        // Allow data to be added to all columns in a tableview
+        // Allow editing for Due Date and Description columns
+        // Set filterBox options, "All", "Complete", "Incomplete"
+        // Set statusBox options, "Complete", "Incomplete
     }
 
 }
+
 
